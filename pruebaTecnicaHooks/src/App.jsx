@@ -5,7 +5,6 @@ import productosTest from './mocks/productosTest.json'
 
 
 function App() {
-  console.log(productosTest)
   return (
     <>
       <div className="containerMain">
