@@ -8,7 +8,8 @@ function App() {
   return (
     <>
       <div className="containerMain">
-        <Head/>
+        <Head
+        productFilter={productosTest}/>
         <Products
         productFilter={productosTest}/>
       </div>
