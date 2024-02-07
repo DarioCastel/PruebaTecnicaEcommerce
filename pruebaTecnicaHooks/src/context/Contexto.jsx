@@ -1,18 +1,19 @@
-import React, { createContext, useContext } from 'react'
+import React, { createContext, useContext, useState } from 'react'
+
+
+export const MiContexto = createContext()
 
 
 
-const Contexto = () => {
-    const miContexto = createContext()
+export function Contexto ({children}) {
+  //aca tienen que ir los estados y sets de categoria y precio
+  const [filter, setFilter] = useState({category:"all",price:0})
 
-    const ProveedorDeContexto= ({children})=>{
-        const valorDeContext = "oli";
-    }
+
   return (
-    <miContexto.Provider value={valorDeContext}>
+    <MiContexto.Provider value={{filter,setFilter}}>
         {children}
-    </miContexto.Provider>
+    </MiContexto.Provider>
   )
 }
 
-export default Contexto
