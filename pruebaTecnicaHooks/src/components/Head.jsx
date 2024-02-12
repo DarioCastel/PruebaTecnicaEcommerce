@@ -4,15 +4,19 @@ import { useFilters } from "../hooks/useFilters";
 
 
 const Head = ({ productFilter }) => {
-  const [optionSelect, setOptionSelect] = useState("all");
+  
 
   const {setFilter,filter,filterCategorias} = useFilters()
-  const handleSelect = () => {
-    setOptionSelect();
+  const handleSelect = (event) => {
+    setFilter(
+      prevState=>({
+        ...prevState,
+        category:event.target.value
+      })
+    )
   };
   
   const categoriasFiltradas = filterCategorias(productFilter)
-  console.log(categoriasFiltradas)
   return (
     <>
       <div className="headContainer">
@@ -20,8 +24,10 @@ const Head = ({ productFilter }) => {
         <div className="priceFilter">filtro precio</div>
         <div className="categoryFilter">
           {"Categoria:"}
-          <select name="Categoria" id="">
-            Categoria
+          <select onChange={handleSelect} name="Categoria" id="">
+            {categoriasFiltradas.map(item=>(
+              <option value={item}>{item}</option>
+            ))}
           </select>
         </div>
       </div>

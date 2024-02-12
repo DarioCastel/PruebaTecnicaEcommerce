@@ -1,9 +1,7 @@
 import { useContext } from "react";
-import {MiContexto} from "../context/Contexto.jsx";
-
+import { MiContexto } from "../context/Contexto.jsx";
 
 export function useFilters() {
-
   const { filter, setFilter } = useContext(MiContexto);
 
   const filterCategorias = (productosTest) => {
@@ -11,8 +9,19 @@ export function useFilters() {
     const categoriasUnicas = [...new Set(categories)];
     return categoriasUnicas;
   };
-  return (
-    //lo que va a estar disponible para enviar
-    filter, setFilter,filterCategorias
-  );
+
+  const filterProductos = (productosTest) => {
+    return productosTest.filter((product) => {
+      return (
+        product.price >= filter.price &&
+        (filter.category === "all" || product.category === filter.category)
+      );
+    });
+  };
+  return {
+    filter,
+    setFilter,
+    filterCategorias,
+    filterProductos,
+  };
 }

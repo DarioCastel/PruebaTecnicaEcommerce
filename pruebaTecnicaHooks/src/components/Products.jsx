@@ -5,7 +5,7 @@ const Products = ({productFilter}) => {
   console.log(productFilter)
   return (
     <div className="productContainer">
-      {productFilter.products.slice(0,10).map((item)=>(
+      {productFilter.slice(0,10).map((item)=>(
         <ItemProduct key={item.id} name={item.title} price={item.price} category={item.category} thumbnail={item.thumbnail}/>
       ))}
     </div>
