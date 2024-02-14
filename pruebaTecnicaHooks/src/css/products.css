@@ -1,9 +1,9 @@
 .productContainer{
     display: grid;
-    width: 100%;
+    width: 99%;
     grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
     gap: 1rem;
     justify-items: center;
-    background-color: red;
     padding: .5rem;
+    background-color: rgba(206, 164, 164, 0.712);
 }

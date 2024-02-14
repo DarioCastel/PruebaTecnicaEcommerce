@@ -1,5 +1,38 @@
 .headContainer{
     display: flex;
-    justify-content: space-between;
-    padding: 0rem 5rem;
+    justify-content: space-around;
+    padding: 1rem 2rem;
+    height: 10vh;
+    border-bottom: 2px solid #000;
 }
+
+.pagLogo {
+    display: flex;
+    align-items: center;
+    justify-content: first baseline;
+}
+
+.pagLogo img{
+    width: 40%;
+    height: 100%;
+}
+
+.priceFilter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.categoryFilter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
