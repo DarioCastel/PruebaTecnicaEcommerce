@@ -12,7 +12,7 @@ function App() {
   const {filterProductos} = useFilters()
   const prodFiltrados = filterProductos(productosTest.products)
 
-  const {openModal}= useCart()
+  const {openModal,}= useCart()
   console.log(openModal)
   return (
     <>
