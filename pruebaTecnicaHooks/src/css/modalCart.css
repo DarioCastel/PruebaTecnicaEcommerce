@@ -23,3 +23,22 @@
     font-size: 30px;
     color: red;
 }
+
+.cartTable{
+    width: 100%;
+    table-layout: fixed;
+}
+
+.cartTable thead th{
+    border: 1px solid black;
+    justify-content: baseline;
+    text-align: left;
+}
+
+td{
+    padding: .2rem;
+}
+
+.tdSub{
+    text-align: right;
+}
