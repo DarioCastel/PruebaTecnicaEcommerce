@@ -2,7 +2,6 @@ import ItemProduct from "./ItemProduct"
 import "../css/products.css"
 
 const Products = ({productFilter}) => {
-  console.log(productFilter)
   return (
     <div className="productContainer">
       {productFilter.length===0&&"No se encontró productos"}

@@ -20,6 +20,7 @@ const ItemProduct = ({key,name,price,category,thumbnail}) => {
 
  const handlerItemAdd= ()=>{
   const addItem ={
+    "id":key,
     "title":name,
     "price":price,
     "cant":contador,

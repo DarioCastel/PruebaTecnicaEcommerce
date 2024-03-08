@@ -11,8 +11,6 @@ const addCart= (product)=>{
     setItemToBuy(newCart)
 }
 
-
-
     return{
 
         openModal,

@@ -13,7 +13,6 @@ function App() {
   const prodFiltrados = filterProductos(productosTest.products)
 
   const {openModal,}= useCart()
-  console.log(openModal)
   return (
     <>
       <div className="containerMain">
