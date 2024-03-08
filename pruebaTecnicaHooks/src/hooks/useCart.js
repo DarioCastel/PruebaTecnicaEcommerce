@@ -16,7 +16,8 @@ const addCart= (product)=>{
         openModal,
         setOpenModal,
         itemToBuy,
-        addCart
+        addCart,
+        setItemToBuy
     }
     
 }

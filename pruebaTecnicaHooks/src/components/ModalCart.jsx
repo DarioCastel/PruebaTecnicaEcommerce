@@ -5,7 +5,7 @@ import { useCart } from "../hooks/useCart";
 import { useEffect, useState } from "react";
 
 const ModalCart = () => {
-  const { setOpenModal, itemToBuy } = useCart();
+  const { setOpenModal, itemToBuy, setItemToBuy} = useCart();
   const handlerClose = () => {
     setOpenModal(false);
   };
@@ -19,11 +19,18 @@ const ModalCart = () => {
   
   }, [itemToBuy])
   
+
+  const handlerDeleteAll= ()=>{
+    setItemToBuy([])
+  }
   return createPortal(
     <>
       <div className="modalContainer">
         <IoCloseCircleOutline className="iconClose" onClick={handlerClose} />
         <h1>Carrito</h1>
+        <button className="deleteAll" onClick={handlerDeleteAll}>
+          LIMPIAR CARRO
+        </button>
         {itemToBuy.length === 0 && <span>{"carrito vacio"}</span>}
         {itemToBuy.length > 0 && (
           <table className="cartTable">
