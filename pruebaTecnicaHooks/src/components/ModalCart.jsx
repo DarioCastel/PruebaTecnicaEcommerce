@@ -3,6 +3,7 @@ import "../css/modalCart.css";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useCart } from "../hooks/useCart";
 import { useEffect, useState } from "react";
+import { FaRegTrashCan } from "react-icons/fa6";
 
 const ModalCart = () => {
   const { setOpenModal, itemToBuy, setItemToBuy} = useCart();
@@ -39,6 +40,7 @@ const ModalCart = () => {
               <th>{"Item price"}</th>
               <th>{"Item cant"}</th>
               <th>{"SubTotal"}</th>
+              <th>{"Delete"}</th>
             </thead>
             <tbody>
               {itemToBuy.map((item) => (
@@ -47,6 +49,7 @@ const ModalCart = () => {
                   <td>{item.price}</td>
                   <td>{item.cant}</td>
                   <td className="tdSub">{item.subTotal}</td>
+                  <td className="deleteBtn"><FaRegTrashCan /></td>
                 </tr>
               ))}
                 <td className="nameTotal" colSpan="2" style={{textAlign:"left", borderTop:"1px solid black"}}>Total</td>

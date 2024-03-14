@@ -42,3 +42,11 @@ td{
 .tdSub{
     text-align: right;
 }
+
+
+.deleteBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
