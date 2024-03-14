@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { FaRegTrashCan } from "react-icons/fa6";
 
 const ModalCart = () => {
-  const { setOpenModal, itemToBuy, setItemToBuy} = useCart();
+  const { setOpenModal, itemToBuy, setItemToBuy, deleteItem} = useCart();
   const handlerClose = () => {
     setOpenModal(false);
   };
@@ -24,6 +24,11 @@ const ModalCart = () => {
   const handlerDeleteAll= ()=>{
     setItemToBuy([])
   }
+
+  const handlerDlt= (title)=>{
+    deleteItem(title)
+  }
+
   return createPortal(
     <>
       <div className="modalContainer">
@@ -49,7 +54,7 @@ const ModalCart = () => {
                   <td>{item.price}</td>
                   <td>{item.cant}</td>
                   <td className="tdSub">{item.subTotal}</td>
-                  <td className="deleteBtn"><FaRegTrashCan /></td>
+                  <td className="deleteBtn" onClick={()=>handlerDlt(item.title)}><FaRegTrashCan /></td>
                 </tr>
               ))}
                 <td className="nameTotal" colSpan="2" style={{textAlign:"left", borderTop:"1px solid black"}}>Total</td>
