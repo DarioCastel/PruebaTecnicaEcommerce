@@ -23,10 +23,17 @@ const ModalCart = () => {
 
   const handlerDeleteAll= ()=>{
     setItemToBuy([])
+    setAcumulador(0)
   }
+  const handlerDlt = (title) => {
+    const itemToDelete = itemToBuy.find(item => item.title === title);
+    const subtotalToDelete = itemToDelete ? itemToDelete.subTotal : 0;
+  
+ 
+    setAcumulador(acumulador - subtotalToDelete);
+  
 
-  const handlerDlt= (title)=>{
-    deleteItem(title)
+    deleteItem(title);
   }
 
   return createPortal(

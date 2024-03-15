@@ -28,8 +28,10 @@ const addCart = (product) => {
 
 const deleteItem= (titleToDelete)=>{
     const listFiltered= itemToBuy.filter(item => item.title !== titleToDelete)
+    
     return(
         setItemToBuy(listFiltered)
+        
     )
 }
 
