@@ -6,35 +6,38 @@ import { useEffect, useState } from "react";
 import { FaRegTrashCan } from "react-icons/fa6";
 
 const ModalCart = () => {
-  const { setOpenModal, itemToBuy, setItemToBuy, deleteItem} = useCart();
+  const { setOpenModal, itemToBuy, setItemToBuy, deleteItem } = useCart();
   const handlerClose = () => {
     setOpenModal(false);
   };
+  var newTotal=0
 
-  const [acumulador, setAcumulador] = useState(0)
+  const [acumulador, setAcumulador] = useState(0);
 
   useEffect(() => {
     itemToBuy.forEach((item) => {
-      setAcumulador(acumulador + item.subTotal)
+      newTotal= newTotal+item.subTotal,
+      setAcumulador(newTotal);
     });
-  
-  }, [itemToBuy])
-  
+  }, [itemToBuy]);
 
-  const handlerDeleteAll= ()=>{
-    setItemToBuy([])
-    setAcumulador(0)
-  }
+  const handlerDeleteAll = () => {
+    setItemToBuy([]);
+    setAcumulador(0);
+  };
   const handlerDlt = (title) => {
-    const itemToDelete = itemToBuy.find(item => item.title === title);
-    const subtotalToDelete = itemToDelete ? itemToDelete.subTotal : 0;
-  
- 
-    setAcumulador(acumulador - subtotalToDelete);
-  
+    if (itemToBuy.length > 1) {
+      const itemToDelete = itemToBuy.find((item) => item.title === title);
+      const subtotalToDelete = itemToDelete ? itemToDelete.subTotal : 0;
 
-    deleteItem(title);
-  }
+      setAcumulador(acumulador - subtotalToDelete);
+
+      deleteItem(title);
+    } else {
+      setItemToBuy([]);
+      setAcumulador(0);
+    }
+  };
 
   return createPortal(
     <>
@@ -61,12 +64,29 @@ const ModalCart = () => {
                   <td>{item.price}</td>
                   <td>{item.cant}</td>
                   <td className="tdSub">{item.subTotal}</td>
-                  <td className="deleteBtn" onClick={()=>handlerDlt(item.title)}><FaRegTrashCan /></td>
+                  <td
+                    className="deleteBtn"
+                    onClick={() => handlerDlt(item.title)}
+                  >
+                    <FaRegTrashCan />
+                  </td>
                 </tr>
               ))}
-                <td className="nameTotal" colSpan="2" style={{textAlign:"left", borderTop:"1px solid black"}}>Total</td>
-                <td className="tdTotal" colSpan="2" style={{textAlign:"right", borderTop:"1px solid black"}}>{"$ "}{acumulador}</td>
-
+              <td
+                className="nameTotal"
+                colSpan="2"
+                style={{ textAlign: "left", borderTop: "1px solid black" }}
+              >
+                Total
+              </td>
+              <td
+                className="tdTotal"
+                colSpan="2"
+                style={{ textAlign: "right", borderTop: "1px solid black" }}
+              >
+                {"$ "}
+                {acumulador}
+              </td>
             </tbody>
           </table>
         )}
