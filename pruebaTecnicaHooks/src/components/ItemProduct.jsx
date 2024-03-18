@@ -40,11 +40,11 @@ const ItemProduct = ({key,name,price,category,thumbnail}) => {
             <span>{"$"}{price}</span>
             <span>{category}</span>
             <div className="btnItems">
-              <button className="addItem" onClick={handlerItemAdd}>agregar carrito</button>
+              <button className="addItem" onClick={handlerItemAdd}>ADD CART</button>
               <div className="contItems">
-                <button className="discItem" onClick={handlerDisc}>{"-"}</button>
+                <button className="resItem" onClick={handlerDisc}>{"-"}</button>
                 <span className="cantItem">{contador}</span>
-                <button className="addItem" onClick={handlerAdd}>{"+"}</button>
+                <button className="sumItem" onClick={handlerAdd}>{"+"}</button>
               </div>
             </div>
         </div>

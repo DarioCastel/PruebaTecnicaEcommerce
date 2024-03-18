@@ -6,7 +6,7 @@
     gap: 1rem;
     border-radius: 10px;
     justify-content: space-between;
-    background-color: rgb(177, 80, 80);
+    background-color: rgb(40, 228, 65);
 }
 
 .itemImage{
@@ -30,21 +30,84 @@ img{
     display: flex;
     flex-direction: column;
     height: 50%;
-    gap: .2rem;
+    gap: .1rem;
     justify-content: space-between;
     padding: 1rem;
+    text-transform: uppercase;
 }
 
 .btnItems{
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
 }
 
+.addItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #036d03;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 2rem;
+}
+
+.addItem:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #036d03;
+}
+
+.resItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #036d03;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 2rem;
+    width: 2rem;
+}
+
+.resItem:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #036d03;
+    
+}
+
+.sumItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #036d03;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 2rem;
+    width: 2rem;
+}
+
+.sumItem:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #036d03;
+}
+
+
+
 .contItems{
     display: flex;
-    gap: .5rem;
+    gap: .2rem;
     align-items: center;
 }
 .cantItem{
