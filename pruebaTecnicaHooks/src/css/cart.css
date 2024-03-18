@@ -1,9 +1,14 @@
-.containerCart{
-    display: none;
-}
-.cartLogo{
+.btnCart{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
+    height: 3rem;
+    width: 6rem;
+    background-color: #036d03;
+    color: white;
+}
+
+.btnCart:hover{
+    background-color: white;
+    color: #036d03;
 }

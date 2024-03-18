@@ -34,11 +34,12 @@ const Head = ({ productFilter }) => {
           <img src={Logo} alt="" />
         </div>
         <div className="priceFilter">
+          {"Price filter: "}
           <input type="range" min="0" max="2000" onChange={handleSlice}/>
           <span>{"$"}{filter.price}</span>
         </div>
         <div className="categoryFilter">
-          {"Categoria:"}
+          {"Category: "}
           <select onChange={handleSelect} name="Categoria" id="">
             <option value="all">all</option>
             {categoriasFiltradas.map(item=>(

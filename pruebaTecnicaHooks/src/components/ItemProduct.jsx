@@ -42,9 +42,9 @@ const ItemProduct = ({key,name,price,category,thumbnail}) => {
             <div className="btnItems">
               <button className="addItem" onClick={handlerItemAdd}>ADD CART</button>
               <div className="contItems">
-                <button className="resItem" onClick={handlerDisc}>{"-"}</button>
-                <span className="cantItem">{contador}</span>
                 <button className="sumItem" onClick={handlerAdd}>{"+"}</button>
+                <span className="cantItem">{contador}</span>
+                <button className="resItem" onClick={handlerDisc}>{"-"}</button>
               </div>
             </div>
         </div>
